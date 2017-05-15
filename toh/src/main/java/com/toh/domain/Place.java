@@ -6,7 +6,7 @@ package com.toh.domain;
  * @author baar
  *
  */
-public class Place {
+public class   Place {
 	
 	// immutable attributes
 	private final String name;
