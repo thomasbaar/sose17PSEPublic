@@ -24,7 +24,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class HeadlinesFragment extends ListFragment {
-    OnHeadlineSelectedListener mCallback;
+    OnHeadlineSelectedListener   mCallback;
 
     // The container Activity must implement this interface so the frag can deliver messages
     public interface OnHeadlineSelectedListener {
@@ -36,7 +36,6 @@ public class HeadlinesFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // We need to use a different list item layout for devices older than Honeycomb
         int layout = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
                 android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
 
@@ -49,7 +48,8 @@ public class HeadlinesFragment extends ListFragment {
         super.onStart();
 
         // When in two-pane layout, set the listview to highlight the selected list item
-        // (We do this during onStart because at the point the listview is available.)
+        // (We do this during onStart because at the point the listview is available
+        // We need to use a different list item layout for devices older than Honeycomb.)
         if (getFragmentManager().findFragmentById(R.id.article_fragment) != null) {
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         }
