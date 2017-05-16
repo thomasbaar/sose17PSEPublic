@@ -23,6 +23,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.android.fragments.data.Ipsum;
+
 public class HeadlinesFragment extends ListFragment {
     OnHeadlineSelectedListener mCallback;
 
@@ -41,7 +43,7 @@ public class HeadlinesFragment extends ListFragment {
                 android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
 
         // Create an array adapter for the list view, using the Ipsum headlines array
-        setListAdapter(new ArrayAdapter<String>(getActivity(), layout, Ipsum.Headlines));
+        setListAdapter(new ArrayAdapter<String>(getActivity(), layout, Ipsum.HEADLINES()));
     }
 
     @Override
